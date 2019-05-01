@@ -15,7 +15,7 @@ namespace DSHS.ESA.DCS
         /// </summary>
         /// <param name="adGroup">Default Value is "G-S-DSHS DCS IT Service Desk"</param>
         /// <returns></returns>
-        public static List<string> GetGroupMembers(string adGroup = @"G-S-DSHS DCS IT Service Desk")
+        public static List<string> GetGroupMembers(string adGroup)
         {
             List<string> members = new List<string>();
 

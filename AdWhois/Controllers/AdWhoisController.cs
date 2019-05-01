@@ -1,9 +1,8 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Web.Http;
-using System.DirectoryServices.AccountManagement;
 using DSHS.ESA.DCS;
-using System.ComponentModel.DataAnnotations;
 
 namespace AdWhois.Controllers
 {
@@ -17,7 +16,7 @@ namespace AdWhois.Controllers
         [Route("v1/GetGroupMembers")]
         public IEnumerable<string> GetMembers()
         {
-            return ADHelper.GetGroupMembers();
+            return ADHelper.GetGroupMembers(ConfigurationManager.AppSettings["DefaultAdGroupName"]);
         }
 
         // Post api/whois/v1/GetAdGroupUsers
