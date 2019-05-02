@@ -14,7 +14,7 @@ namespace AdWhois.Controllers
         // GET api/whois/v1/GetGroupMembers
         [HttpGet]
         [Route("v1/GetGroupMembers")]
-        public IEnumerable<string> GetMembers()
+        public IEnumerable<string> GetGroupMembers()
         {
             return ADHelper.GetGroupMembers(ConfigurationManager.AppSettings["DefaultAdGroupName"]);
         }
@@ -34,7 +34,7 @@ namespace AdWhois.Controllers
         // Post api/whois/v2/GetGroupMembers
         [HttpPost]
         [Route("v2/GetGroupMembers")]
-        public IEnumerable<string> GetMembers([FromBody]string adGroup)
+        public IEnumerable<string> GetGroupMembers([FromBody]string adGroup)
         {
             return ADHelper.GetGroupMembers(adGroup);
         }
